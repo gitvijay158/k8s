@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: dockervijay158/kub-demo-backend:latest
+          image: asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/node:latest
           env:
             - name: AUTH_ADDRESS
               value: "auth-service:3000"
