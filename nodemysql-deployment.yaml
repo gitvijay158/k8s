@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodemysql-deployment
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: nodemysql
+  template:
+    metadata:
+      labels:
+        app: nodemysql
+    spec:
+      containers:
+        - name: nodemysql
+          image: asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/node-mysql:latest
+          env:
+            - name: AUTH_ADDRESS
+              value: "auth-service:3000"
+              #value: "auth-service.default"
