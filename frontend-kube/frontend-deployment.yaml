@@ -1,0 +1,57 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "frontend-app"
+  namespace: "app"
+  labels:
+    app: "frontend-app"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "frontend-app"
+  template:
+    metadata:
+      labels:
+        app: "frontend-app"
+    spec:
+      containers:
+      - name: "frontend-app"
+        image: asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/frontend:latest
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 4000Mi
+          requests:
+            cpu: 2000m
+            memory: 4000Mi
+---
+apiVersion: "autoscaling/v2"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "frontend-app"
+  namespace: "app"
+  labels:
+    app: "frontend-app"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "frontend-app"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 1
+  metrics:
+  - type: "Resource"
+    resource:
+      name: "cpu"
+      target:
+        type: Utilization
+        averageUtilization: 60
+  - type: "Resource"
+    resource:
+      name: "memory"
+      target:
+        type: Utilization
+        averageUtilization: 60
+

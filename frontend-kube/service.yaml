@@ -1,0 +1,17 @@
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "frontend-app-service"
+  namespace: "app"
+  labels:
+    app: "frontend-app"
+spec:
+  ports:
+  - protocol: "TCP"
+    port: 5000
+    targetPort: 5000
+  selector:
+    app: "frontend-app"
+  type: "LoadBalancer"
+  loadBalancerIP: ""
