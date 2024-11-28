@@ -6,18 +6,16 @@ metadata:
   name: frontend-app
   namespace: app
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: "practice-app"  
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  tls:
-  - secretName: learning2024
   rules:
-  - host: app-app.extramarks.com
   - http:
       paths:
-      - backend:
+      - path: /
+        pathType: Prefix
+        backend:
           service:
             name: frontend-app-service
             port:
               number: 5000
-        path: /
-        pathType: Prefix
+
