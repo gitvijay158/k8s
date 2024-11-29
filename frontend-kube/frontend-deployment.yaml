@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: "frontend-app"
-        image: asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/frontend:latest
+        image: "asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/frontend:latest"
         resources:
           requests:
             cpu: "500m"         # Requesting 0.5 core
