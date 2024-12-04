@@ -7,6 +7,11 @@ metadata:
   namespace: default
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "*"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "false" # Use true if credentials are needed
+    nginx.ingress.kubernetes.io/cors-allow-headers: "*"
 spec:
   rules:
     - http:
