@@ -21,7 +21,7 @@ spec:
         image: "asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/frontend:latest"
         env:
             - name: REACT_APP_API_URL
-              value: "http://34.8.183.235"
+              value: "http://34.128.132.45/"
         resources:
           requests:
             cpu: "500m"         # Requesting 0.5 core
