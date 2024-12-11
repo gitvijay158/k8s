@@ -16,7 +16,7 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-headers: "*"
 spec:
   rules:
-  - host: "34.149.240.28.nip.io"  # Replace with nip.io or xip.io domain
+  - host: "myfrontend.com"  # Replace with nip.io or xip.io domain
     http:
       paths:
       - path: /api
