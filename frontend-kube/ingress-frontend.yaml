@@ -12,25 +12,24 @@ metadata:
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
     nginx.ingress.kubernetes.io/cors-allow-methods: "*"
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "false" # Use true if credentials are needed
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "false"
     nginx.ingress.kubernetes.io/cors-allow-headers: "*"
 spec:
   rules:
-    - host: "34.149.240.28"
-      http:
-        paths:
-        - path: /api
-          pathType: Prefix
-          backend:
-            service:
-              name: backend-service
-              port:
-                number: 3001
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: frontend-app-service
-              port:
-                number: 5000
- 
+  - host: "34.149.240.28.nip.io"  # Replace with nip.io or xip.io domain
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-service
+            port:
+              number: 3001
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-app-service
+            port:
+              number: 5000
