@@ -16,7 +16,7 @@ metadata:
 spec:
   rules:
     - host: myfrontend.com
-      http:
+    - http:
         paths:
         - path: /api
           pathType: Prefix
