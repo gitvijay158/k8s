@@ -16,16 +16,16 @@ metadata:
 spec:
   rules:
     - host: myfrontend.com
-    - http:
+      http:
         paths:
-        - path: /
+        - path: /api
           pathType: Prefix
           backend:
             service:
               name: backend-service
               port:
                 number: 3001
-        - path: /frontpanel
+        - path: /
           pathType: Prefix
           backend:
             service:
