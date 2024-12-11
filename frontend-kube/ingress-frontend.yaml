@@ -6,6 +6,7 @@ metadata:
   name: "frontend-app"
   namespace: default
   annotations:
+    kubernetes.io/ingress.global-static-ip-name: "ingress-static-ip"  
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
@@ -14,12 +15,21 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-headers: "*"
 spec:
   rules:
-    - http:
+    - host: myfrontend.com
+      http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: frontend-app-service
-                port:
-                  number: 5000
+        - path: /api
+          pathType: Prefix
+          backend:
+            service:
+              name: backend-service
+              port:
+                number: 3001
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: frontend-app-service
+              port:
+                number: 5000
+ 
