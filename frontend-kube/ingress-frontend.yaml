@@ -19,13 +19,6 @@ spec:
   - host: "myfrontend.com"  # Replace with nip.io or xip.io domain
     http:
       paths:
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: backend-service
-            port:
-              number: 3001
       - path: /
         pathType: Prefix
         backend:
