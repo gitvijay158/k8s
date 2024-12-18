@@ -6,14 +6,13 @@ metadata:
   name: "frontend-app"
   namespace: default
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: "ingress-static-ip"  
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
     nginx.ingress.kubernetes.io/cors-allow-methods: "*"
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "false"
     nginx.ingress.kubernetes.io/cors-allow-headers: "*"
 spec:
+  ingressClassName: nginx  # Specify the IngressClass name
   rules:
   - http:
       paths:
