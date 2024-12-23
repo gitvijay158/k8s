@@ -24,11 +24,13 @@ spec:
               value: "http://backend-service:3001"
         resources:
           requests:
-            cpu: "500m"         # Requesting 0.5 core
+            cpu: "250m"         # Requesting 0.5 core
             memory: "512Mi"     # Requesting 512 MB of RAM
           limits:
             cpu: "1000m"        # Limiting to 1 core
             memory: "1024Mi"    # Limiting to 1 GB of RAM
+
+           
 ---
 apiVersion: "autoscaling/v2"
 kind: "HorizontalPodAutoscaler"
