@@ -17,6 +17,7 @@ metadata:
 spec:
         #  ingressClassName: nginx  # Specify the IngressClass name
   rules:
+  - host: arvind.vijay.com
   - http:
       paths:
       - path: /
