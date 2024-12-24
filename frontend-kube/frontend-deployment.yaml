@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: "frontend-app"
-        image: "asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/frontend:11"
+        image: "asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/frontend:12"
         env:
             - name: REACT_APP_API_URL
               value: "http://backend-service:3001"
