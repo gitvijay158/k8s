@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/my-nestjs-app:latest
+          image: asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/my-nestjs-app:5"
           env:
             - name: AUTH_ADDRESS
               value: "auth-service:3000"
