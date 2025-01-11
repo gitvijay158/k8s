@@ -1,21 +1,21 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: "apps/v1"
+kind: "Deployment"
 metadata:
-  name: backend-deployment
+  name: "backend-deployment"
   namespace: "default"
 spec:
-  replicas: 1
+  replicas: "1"
   selector: 
     matchLabels:
-      app: backend
+      app: "backend"
   template:
     metadata:
       labels:
-        app: backend
+        app: "backend"
     spec:
       containers:
-        - name: backend
-          image: "asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/my-nestjs-app"
+        - name: "backend"
+          image: "asia-south1-docker.pkg.dev/capable-matrix-441709-b0/artifactregistryattendance/my-nestjs-app:14"
           env:
             - name: AUTH_ADDRESS
               value: "auth-service:3000"
